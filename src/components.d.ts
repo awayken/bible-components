@@ -9,53 +9,31 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface BibleLine {
+    'lineNumber': number;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLBibleLineElement extends Components.BibleLine, HTMLStencilElement {}
+  var HTMLBibleLineElement: {
+    prototype: HTMLBibleLineElement;
+    new (): HTMLBibleLineElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'bible-line': HTMLBibleLineElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface BibleLine extends JSXBase.HTMLAttributes<HTMLBibleLineElement> {
+    'lineNumber'?: number;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'bible-line': BibleLine;
   }
 }
 
