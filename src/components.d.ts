@@ -12,6 +12,11 @@ export namespace Components {
   interface BibleLine {
     'lineNumber': number;
   }
+  interface BibleVerse {
+    'book': string;
+    'chapter': string;
+    'verses'?: string;
+  }
 }
 
 declare global {
@@ -22,8 +27,15 @@ declare global {
     prototype: HTMLBibleLineElement;
     new (): HTMLBibleLineElement;
   };
+
+  interface HTMLBibleVerseElement extends Components.BibleVerse, HTMLStencilElement {}
+  var HTMLBibleVerseElement: {
+    prototype: HTMLBibleVerseElement;
+    new (): HTMLBibleVerseElement;
+  };
   interface HTMLElementTagNameMap {
     'bible-line': HTMLBibleLineElement;
+    'bible-verse': HTMLBibleVerseElement;
   }
 }
 
@@ -31,9 +43,15 @@ declare namespace LocalJSX {
   interface BibleLine extends JSXBase.HTMLAttributes<HTMLBibleLineElement> {
     'lineNumber'?: number;
   }
+  interface BibleVerse extends JSXBase.HTMLAttributes<HTMLBibleVerseElement> {
+    'book'?: string;
+    'chapter'?: string;
+    'verses'?: string;
+  }
 
   interface IntrinsicElements {
     'bible-line': BibleLine;
+    'bible-verse': BibleVerse;
   }
 }
 

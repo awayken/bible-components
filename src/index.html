@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>Bible Components</title>
 
   <script type="module" src="/build/bible-components.esm.js"></script>
   <script nomodule src="/build/bible-components.js"></script>
-
 </head>
 <body>
+  <h1>Bible Verse</h1>
+  <bible-verse book="Proverbs" chapter="8" verses="22-31">
+    Yahweh created me, first fruits of his fashioning, before the oldest of his works.
+    From everlasting, I was firmly set, from the beginning before the earth came into being.
+  </bible-verse>
 
+  <h1>Bible Lines</h1>
   <bible-line line-number="22">
     Yahweh created me, first fruits of his fashioning, before the oldest of his works.
   </bible-line>
   <bible-line line-number="23">
     From everlasting, I was firmly set, from the beginning before the earth came into being.
   </bible-line>
-
 </body>
 </html>
